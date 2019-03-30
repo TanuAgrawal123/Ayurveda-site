@@ -1,0 +1,84 @@
+{% load static %}
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'ayurvedasite/css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Ayurveda:Healing Power of Nature</title>
+</head>
+<body>
+
+	<div class="header">
+		<div id ="imgblock"><img src="#" class="float-left rounded-circle" id="imlogo"></div>
+		<div class="text-center mt-4" id="text-heading"><b><i><h1 class="text-danger" id="heading">AYURVEDA<br>
+		The Healing Power Of Nature</h1></i></b>
+
+	</div>
+</div>
+<nav class="navbar navbar-expand-md navbar-dark bg-info mt-5">
+	<div class="container">
+		<a class="navbar brand mr-4" href="#"><strong>AYURVEDA</strong></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarToggle">
+			<div class="navbar-nav mr-auto">
+				<a class=" nav-item nav-link" href="{% url 'ayurvedasite:home_page' %}"><strong>HOME</strong></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarToggle">
+			<div class="navbar-nav mr-auto">
+				<a class=" nav-item nav-link mr-1" href="{% url 'ayurvedasite:intro_page' %}" ><strong>HISTORY</strong></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarToggle">
+			<div class="navbar-nav mr-auto">
+				<a class=" nav-item nav-link" href="{% url 'ayurvedasite:symptoms'%}"><strong>DISEASES AND REMEDIES</strong></a>
+			</div>
+
+			<div class="navbar-nav">
+				{% if user.is_authenticated %}
+	<a href="{% url 'ayurvedasite:logout' %}"><button type="button" class="btn btn-success"><strong>LOGOUT</strong></button></a>
+					
+				{% else %}
+				<a href="{% url 'social:begin' 'google-oauth2' %}"><button type="button" class="btn btn-danger m-1">Google+</button></a>
+				
+				<a  href="#"><button type="button" class="btn btn-primary m-1"><strong>LOGIN</strong></button></a>
+				<a href="#"><button type="button" class="btn btn-warning m-1"><strong>REEGISTER</strong></button></a>
+				{% endif %}
+			
+	</div></div></div></nav>
+
+
+       {% block content %}
+       {% endblock %}
+       <div class="bg-dark">
+       	
+       
+       	<div class="container"><br><h3 class="text-white">ABOUT US</h3>
+       		<p class="text-white"> Ayurveda was founded with the mission of 'taking Ayurveda to every home'. Our objective of making people happy and healthy through authentic Ayurvedic treatment delivered to the growing ailments and disorders such as diabetes, arthritis, asthma, obesity, hypertension, spondylitis, piles, skin problems, sexual disorders, etc. Most of these diseases affecting the global community today do not have an effective treatment available in modern medicine.
+</p>
+       	</div>
+       	 
+       	<div class="col-12 col-sm-6 col-lg-3">
+						
+						<address>
+							<<h3 class="text-white">ADDRESS:</h3>
+							<p class="text-white">350 5th avenue<br>
+							India NY 10118<br>
+							<i class="fa fa-phone fa-fw" aria-hidden="true"></i>
+							<span class="sr-only">Telephone</span><a href="tel:+1217363600">(212) 7363600</a><br>
+							<i class="fa fa-inbox fa-fw" aria-hidden="true"></i><span class="sr-only">Mail</span><a href="mailto:info@ayurveda.com">info@ayurveda.com</a></p>
+						</address></div></div>
+       
+      
+  
+	</body>
+
+
+</html>

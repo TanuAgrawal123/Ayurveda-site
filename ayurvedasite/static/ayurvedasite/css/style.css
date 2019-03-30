@@ -1,0 +1,17 @@
+
+#top{
+	font-family: "fantasy";
+}
+body {
+ background: white url("ayurvedasite/images/img1.jpeg") repeat;  
+}
+
+.container{
+	float: left;
+
+}
+ h1,h2,h3,h4,h5,h6{
+    	font-family: Rubik, sans-serif;
+    }
+
+

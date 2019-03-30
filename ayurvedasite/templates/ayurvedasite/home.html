@@ -1,5 +1,51 @@
-<head>
-</head>
-<body>
-	<h1>Hello</h1>
-</body>
+{% extends "ayurvedasite/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+.jumbotron{
+        background-image:url("static/ayurvedasite/images/download.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 500;
+    }
+</style>
+<section id="section-top" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+<div class="container text-center">
+	
+	<h1 class="text-center text-white mt-5" id="top"><b><i>leave your drugs in the chemist's pot <br>if you can heal the patient with food.</i></b></h1></mark>
+	</div>
+            </section>
+
+    
+
+
+
+            </form>
+        </div>
+    </div></div></div>
+            
+            <h2>Comments</h2>
+            {{ comments.count }} Comment{{ comments|pluralize }}
+
+             {% for comment in comments %}
+            
+                 
+            <div class="media">
+                <img src="https://c.disquscdn.com/next/embed/assets/img/noavatar92.7b2fde640943965cc88df0cdee365907.png" class="mr-3">
+                <div class="media-body">
+                	<blockquote class="blockquote">
+                    <strong>{{ comment.text }}</strong><footer class="blockquote footer">  (Posted on: {{ comment.created_date }})<p>by {{ comment.user}}</p></footer></div>
+                </blockquote>
+                </div>
+                <hr>
+             {% empty %}
+             <p>No comments here yet:(</p>
+             {% endfor %}   
+                
+<a class="btn btn-default" href="{% url 'ayurvedasite:add_comment' %}">Add comment</a>
+            
+          
+{% endblock content %}
