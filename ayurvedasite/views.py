@@ -27,8 +27,10 @@ def symptoms(request):
 	paginator = Paginator(symptoms_list,2,allow_empty_first_page=False)
 	page=request.GET.get('page',1)
 	sym=paginator.page(page)
-	print("hi")
 	return render(request, 'ayurvedasite/symptoms.html', {'sym': sym})
+	
+
+
 
 
 

@@ -4,35 +4,47 @@
 
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <div class="row">
-    <div class="col-12">
-            {% for symp in sym %}
-            <div class="card text-dark border-info shadow p-3 
+	<div class="container">
+  
+            
+            <div class="card text-dark border-info shadow p-3 col-12
             ">
                 
                
                     <div card="card-body">
-                    <h2><div class="card-title">{{ symp.name }}</a></h2>
+                    	<div class="card-deck shadow">
+                    		 {% for symp in sym %}
+                    		<div class="card border-dark shadow-lg col-6 p-3 m-2 text-center" id="cards">
+                    			<div class="card-body">
+                    <h2><div class="card-title text-center text-success">{{ symp.name }}</div></h2>
                     <img src="{{symp.image.url }}">
 
-                    <p class="card-text"><h3>Causes</h3>{{ symp.causes|linebreaksbr }}<br>
-                    	<h3>Symptoms</h3>{{symp.symptom|linebreaksbr }}
-                    	<h3>Remedy</h3>{{ symp.remedy|linebreaksbr }}
+                    <p class="card-text"><h3 class="text-danger">Causes</h3>{{ symp.causes|linebreaksbr }}<br>
+                    	<h3 class="text-danger">Symptoms</h3>{{symp.symptom|linebreaksbr }}
+                    	<h3 class="text-danger">Remedy</h3>{{ symp.remedy|linebreaksbr }}
                     </p>
                 
                 <br>
                 
                    
                   <p class="card-subtitle"><a href="{{ symp.link }}">For More Info</a></p>
-                    
+</div>
+</div>
+{% endfor %}                    
             </div>
         </div>
-        
+        <div>
+        	</div>
+       </div>
+   
+
+
         <br>
-            {% endfor %}
-        
-     <div class="pagination">
+            
+        <br>
+     <div class="pagination m-3">
         
          <span class="step-links">
        
@@ -52,9 +64,11 @@
    
     </div>
 </div>
- 
+ </div>
+{% else %}
+<div class="container">
+	<h1 class="text-danger">You Are Not Logged IN please sign in to Acces the Details</h1>
+</div>
 
-
-
-
+{% endif %}
 {% endblock content %}

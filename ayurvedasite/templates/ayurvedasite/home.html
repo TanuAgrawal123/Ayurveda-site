@@ -7,21 +7,32 @@
     
 
 
+<div class= "p-5 m-5" id="health" >
+	<h1 class="text-info text-center">Health Tips</h1>
+	<ol>
+		<li>Schedule a walk with a friend or co-worker. Ayurveda considers <mark>walking a tridoshic exercise</mark>: it balances all three doshas without putting excessive strain on your body. It calms the mind and nourishes the senses.</li>
+		<li>Drink a <mark>glass of water</mark>. Water flushes out accumulated ama, and keeps the digestion smooth. Sipped throughout the day, water is an excellent healer.</li>
+		<li>
+		Sit down and close your eyes. Take a "just-for-me" break right now, right here. Disconnect from the outer world and tune in to your own self. Even if you do this for a minute, you will feel healed. Practitioners of <mark>Transcendental Meditation</mark> say their daily 20-minute sadhana helps conquer stress and increase positive energy and a sense of well-being.</li>
+         <li>Sip herb tea. All-natural, caffeine-free teas prepared from nature's healing herbs are a perfect way to relax and recharge: choose from among Maharishi Ayurveda's wide range of <mark>gourmet beverages</mark> to pick the flavor and blend that suits your unique dosha type and your needs</li>
+         <li><mark>Breathe deep</mark>. Mindful breathing improves the flow of oxygen and other vital nutrients to the tiniest channels of the body, giving you an instant sense of well-being.</li>
+     </ol>
+ </div>
 
-            
+
         
             
-            <h2>Comments</h2>
-            {{ comments.count }} Comment{{ comments|pluralize }}
-
+            <h2 class="text-success">Comments</h2>
+            <button type="button" class="btn btn-primary">Comment{{ comments|pluralize }} <span class="badge">{{comments.count }}</span></button>
+            
              {% for comment in comments %}
             
                  
-            <div class="media">
+            <div class="media mt-5">
                 <img src="https://c.disquscdn.com/next/embed/assets/img/noavatar92.7b2fde640943965cc88df0cdee365907.png" class="mr-3">
                 <div class="media-body">
                 	<blockquote class="blockquote">
-                    <strong>{{ comment.text }}</strong><footer class="blockquote footer">  (Posted on: {{ comment.created_date }})<p>by {{ comment.user}}</p></footer></div>
+                    <strong>{{ comment.text }}</strong><footer class="blockquote footer">  (Posted on: {{ comment.created_date }})by <p class="text-info"><small> by {{ comment.user }}</small></p></footer></div>
                 </blockquote>
                 </div>
                 <hr>
@@ -29,7 +40,7 @@
              <p>No comments here yet:(</p>
              {% endfor %}   
                 
-<a class="btn btn-default" href="{% url 'ayurvedasite:add_comment' %}">Add comment</a>
+<a class="btn btn-default  mb-2" href="{% url 'ayurvedasite:add_comment' %}">Add comment</a>
             
           
 {% endblock content %}

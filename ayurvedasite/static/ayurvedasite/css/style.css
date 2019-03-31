@@ -1,6 +1,8 @@
 
 #top{
 	font-family: "fantasy";
+
+  background: rgba(76, 175, 80, 0.3);
 }
 body {
  background: white url("ayurvedasite/images/img1.jpeg") repeat;  
@@ -17,4 +19,12 @@ body {
 .content{
 	width:700 px;
 }
-
+#cards{
+box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
+}
+#health{
+	box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
+}
+#aa{
+	text-shadow: 4px 4px 4px 4px rgba(0,0,0,0.4);
+}
