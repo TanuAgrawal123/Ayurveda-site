@@ -1,10 +1,11 @@
-{% extends "ayurvedasite/base.html" %}
 
+{% extends "ayurvedasite/base.html" %}
 {% load static %}
 
 
 {% block content %}
 {% if user.is_authenticated %}
+<h1 class="text-center text-info">SYMPTOMS AND REMEDIES</h1>
 <div class="row">
 	<div class="container">
   
@@ -19,7 +20,7 @@
                     		<div class="card border-dark shadow-lg col-6 p-3 m-2 text-center" id="cards">
                     			<div class="card-body">
                     <h2><div class="card-title text-center text-success">{{ symp.name }}</div></h2>
-                    <img src="{{symp.image.url }}">
+                    <img src="{{ symp.image.url }}">
 
                     <p class="card-text"><h3 class="text-danger">Causes</h3>{{ symp.causes|linebreaksbr }}<br>
                     	<h3 class="text-danger">Symptoms</h3>{{symp.symptom|linebreaksbr }}
@@ -54,7 +55,7 @@
      {% endif %}
      <span class="step-link">
      <a class="btn btn-primary" href="#">current</a>
-     
+
  </span>
     
      {% if sym.has_next %}

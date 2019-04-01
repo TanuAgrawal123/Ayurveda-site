@@ -40,7 +40,24 @@
              <p>No comments here yet:(</p>
              {% endfor %}   
                 
-<a class="btn btn-default  mb-2" href="{% url 'ayurvedasite:add_comment' %}">Add comment</a>
+<div class="forms">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                <div class="form-group">
+                   
+
+
+    <h1>New comment</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    
+
+
+
+            </form>
+        </div>
+    </div></div></div>
             
           
 {% endblock content %}

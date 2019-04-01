@@ -8,7 +8,7 @@ urlpatterns=[
 path('', views.home_page, name='home_page'),
 path('intro/', views.intro_page, name='intro_page'),
 path('logout/', auth_views.LogoutView.as_view(template_name='ayurvedasite/home.html'), name='logout'),
-path('comment/', views.add_comment, name='add_comment'),
+path('comment/', views.home_page, name='home_page'),
 path('symptoms/',views.symptoms,name='symptoms'),
 
 

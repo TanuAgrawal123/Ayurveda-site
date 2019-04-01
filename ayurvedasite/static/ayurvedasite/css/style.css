@@ -5,9 +5,9 @@
   background: rgba(76, 175, 80, 0.3);
 }
 body {
- background: white url("ayurvedasite/images/img1.jpeg") repeat;  
-}
+ background: white url("static/ayurvedasite/images/back.png") repeat;  
 
+}
 .container{
 	float: left;
 
@@ -28,3 +28,4 @@ box-shadow:4px 4px 4px 4px rgba(0,0,0,0.4);
 #aa{
 	text-shadow: 4px 4px 4px 4px rgba(0,0,0,0.4);
 }
+bo
